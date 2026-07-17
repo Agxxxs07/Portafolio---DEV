@@ -1,0 +1,32 @@
+package org.example
+ 
+fun main() {
+    println(
+        """
+        MENÚ DE DEPORTES
+        1. Fútbol
+        2. Baloncesto
+        3. Béisbol
+        4. Natación
+        5. Tenis
+        """
+    )
+ 
+    var opcion: Int? = 0
+    try {
+        print("Ingrese un número: ")
+        opcion = readln().toInt()
+    } catch(e: Exception) {
+        println("La opción que usted ingresó no puede ser convertida a un entero. Vuélvalo a intentar")
+    }
+ 
+    val deporte: String = when(opcion) {
+        1 -> "Usted verá Fútbol"
+        2 -> "Usted verá Baloncesto"
+        3 -> "Usted verá Béisbol"
+        4 -> "Usted verá Natación"
+        5 -> "Usted verá Tenis"
+        else -> "Opción fuera del menú."
+    }
+    println(deporte)
+}
